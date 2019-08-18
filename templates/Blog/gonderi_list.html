@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>Benim blogu</title>
+    </head>
+    <body>
+     {% for gonderi in gonderis %}
+     <h1> {{ gonderi.baslik }}</h1>
+     <p> {{ gonderi.metin }} </p>
+     {% endfor %}
+    </body>
+</html>
