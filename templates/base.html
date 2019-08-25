@@ -48,14 +48,30 @@
             <a href="index.html" class="text-black h2 mb-0"><img src="{% static 'images/logo.png' %}" alt="Image" class="img-fluid rounded"></a>
           </div>
 
-          <div class="col-8 text-right">
+          <div class="col-8 text-left">
             <nav class="site-navigation" role="navigation">
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
                 <li><a href="{% url 'anaSayfa' %}">Ana Sayfa</a></li>
                 <li><a href="{% url 'gonderi_liste' %}">Blog</a></li>
                 <li><a href="category.html">Urunler</a></li>
                 <li><a href="{% url 'yeni_iletisim_form' %}">İletişim</a></li>
-                <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
+                <li class="d-none d-lg-inline-block">
+                  {% if user.is_authenticated %}
+                           
+                 <a href="{% url 'logout' %}" >
+                 <span class="icon-user-times"></span></a>
+                
+                {% else %}
+                <a href="{% url 'login' %}" >
+                <span class="icon-user"></span>
+                </a>
+                <a href="{% url 'signup' %}">
+                <span class="icon-user-plus">
+                </span>
+                </a>
+                              
+                {% endif %}
+                  </li>
               </ul>
             </nav>
             <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span class="icon-menu h3"></span></a></div>

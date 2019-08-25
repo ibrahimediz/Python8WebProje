@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('',include('AnaSayfa.urls')),
+    ## aslında ana sayfa için uygulama oluşturmaya gerek yoktu aşağıdaki kod iş görür
+    # path('', TemplateView.as_view(template_name='index.html'), name='anaSayfa'),
     path('admin/', admin.site.urls),
     path('blog/',include('Blog.urls')),
-    path('iletisim/',include("Iletisim.urls"))
+    path('iletisim/',include("Iletisim.urls")),
+    path('uyelik/', include('accounts.urls')),
+    path('uyelik/',include('django.contrib.auth.urls'))
     ]
