@@ -1,15 +1,14 @@
 {% extends "base.html" %}
 {% block content  %}
 
-<html>
-    <head>
-        <title>Benim blogu</title>
-    </head>
-    <body>
+
      {% for gonderi in gonderis %}
+     <a href="{% url 'gonderi_detay' gonderi.pk %}">
      <h1> {{ gonderi.baslik }}</h1>
+     </a>
+
      <p> {{ gonderi.metin }} </p>
      {% endfor %}
-    </body>
-</html>
+     <a href="{% url 'yeni_gonderi' %}" > Yeni Blog Gönderisi </a>
+
 {% endblock %}

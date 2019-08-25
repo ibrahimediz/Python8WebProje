@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Gönderi Detay
+{% endblock title %}
+{% block content %}
+<h1>{{gonderi.baslik}}</h1>
+<p>{{gonderi.metin}}</p>
+<p>{{gonderi.yazar}}</p>
+<p>{{gonderi.olusturma_zaman}}</p>
+<a href="{% url 'gonderi_duzenle' pk=gonderi.pk %}">Gonderi Duzenle</a>
+{% endblock content %}

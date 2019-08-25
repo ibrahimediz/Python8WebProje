@@ -6,4 +6,4 @@ class iletisimForm(forms.ModelForm):
 
     class Meta:
         model = iletisim
-        fields = ('Adı', 'soyAdı','giris',)
+        fields = ('Adı', 'soyAdı','email','giris',)
